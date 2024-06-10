@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ErrorMsg } from "../Error";
+import toast from "react-hot-toast";
 
 const RegisterForm = () => {
 	const { push } = useRouter();
@@ -24,10 +25,12 @@ const RegisterForm = () => {
 						"token",
 						res.data.access_token
 					);
-					push("/");
+					toast.success("Register successful !");
+					push("/home");
 				}
 			});
 		} catch (e) {
+			toast.error("Register error !");
 			console.log(e);
 		}
 	};

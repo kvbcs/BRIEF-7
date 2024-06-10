@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ErrorMsg } from "../Error";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
 	const { push } = useRouter();
@@ -24,10 +25,12 @@ const LoginForm = () => {
 						"token",
 						res.data.access_token
 					);
+					toast.success("Login successful !");
 					push("/home");
 				}
 			});
 		} catch (e) {
+			toast.error("Login error !")
 			console.log(e);
 		}
 	};
