@@ -2,10 +2,11 @@
 import { registerApi } from "@/Services/auth";
 import { RegisterProps } from "@/Utils/types";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ErrorMsg } from "../Error";
 import toast from "react-hot-toast";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { schema } from "@/Utils/validator";
 
 const RegisterForm = () => {
 	const { push } = useRouter();
@@ -15,7 +16,7 @@ const RegisterForm = () => {
 		handleSubmit,
 		watch,
 		formState: { errors },
-	} = useForm<RegisterProps>();
+	} = useForm<RegisterProps>({ mode: "all", resolver: yupResolver(schema) });
 
 	const onSubmit: SubmitHandler<RegisterProps> = (data) => {
 		try {
@@ -26,7 +27,7 @@ const RegisterForm = () => {
 						res.data.access_token
 					);
 					toast.success("Register successful !");
-					push("/home");
+					push("/crypto/all");
 				}
 			});
 		} catch (e) {
@@ -62,10 +63,10 @@ const RegisterForm = () => {
 								id="firstName"
 								type="text"
 								className="block indent-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-								{...register("firstName", { required: true })}
+								{...register("firstName")}
 							/>
 							{errors.firstName && (
-								<ErrorMsg error={"firstName"} />
+								<ErrorMsg content={errors.firstName?.message} />
 							)}
 						</div>
 					</div>
@@ -81,28 +82,51 @@ const RegisterForm = () => {
 								id="lastName"
 								type="text"
 								className="block indent-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-								{...register("lastName", { required: true })}
+								{...register("lastName")}
 							/>
+
 							{errors.lastName && (
-								<ErrorMsg error={"Last Name"} />
+								<ErrorMsg content={errors.lastName?.message} />
 							)}
 						</div>
 					</div>
 					<div>
 						<label
-							htmlFor="username"
+							htmlFor="age"
+							className="block text-sm font-medium leading-6 text-white"
+						>
+							Age
+						</label>
+						<div className="mt-2">
+							<input
+								id="age"
+								type="number"
+								className="block indent-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+								{...register("age")}
+							/>
+							{errors.age && (
+								<ErrorMsg content={errors.age?.message} />
+							)}
+						</div>
+					</div>
+					<div>
+						<label
+							htmlFor="pseudo"
 							className="block text-sm font-medium leading-6 text-white"
 						>
 							Username
 						</label>
 						<div className="mt-2">
 							<input
-								id="username"
+								id="pseudo"
 								type="text"
 								className="block indent-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-								{...register("pseudo", { required: true })}
+								{...register("pseudo")}
 							/>
-							{errors.pseudo && <ErrorMsg error={"Username"} />}
+
+							{errors.pseudo && (
+								<ErrorMsg content={errors.pseudo?.message} />
+							)}
 						</div>
 					</div>
 					<div>
@@ -117,9 +141,11 @@ const RegisterForm = () => {
 								id="city"
 								type="text"
 								className="block indent-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-								{...register("city", { required: true })}
+								{...register("city")}
 							/>
-							{errors.city && <ErrorMsg error={"City"} />}
+							{errors.city && (
+								<ErrorMsg content={errors.city?.message} />
+							)}
 						</div>
 					</div>
 					<div>
@@ -135,9 +161,12 @@ const RegisterForm = () => {
 								type="email"
 								autoComplete="email"
 								className="block indent-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-								{...register("email", { required: true })}
+								{...register("email")}
 							/>
-							{errors.email && <ErrorMsg error={"Email"} />}
+
+							{errors.email && (
+								<ErrorMsg content={errors.email?.message} />
+							)}
 						</div>
 					</div>
 
@@ -155,11 +184,12 @@ const RegisterForm = () => {
 								id="password"
 								type="password"
 								className="block indent-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-								{...register("password", {
-									required: true,
-								})}
+								{...register("password")}
 							/>
-							{errors.password && <ErrorMsg error={"Password"} />}
+
+							{errors.password && (
+								<ErrorMsg content={errors.password?.message} />
+							)}
 						</div>
 					</div>
 					<div>
@@ -174,11 +204,14 @@ const RegisterForm = () => {
 								id="promo"
 								type="text"
 								className="block indent-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-								{...register("pseudo", { required: true })}
+								{...register("promoCode")}
 							/>
-							{errors.pseudo && <ErrorMsg error={"Promo Code"} />}
+							{errors.promoCode && (
+								<ErrorMsg content={errors.promoCode?.message} />
+							)}
 						</div>
 					</div>
+
 					<div>
 						<input
 							type="submit"
@@ -186,19 +219,18 @@ const RegisterForm = () => {
 							value="Submit & Log in"
 						/>
 					</div>
-
-					<p className="mt-10 text-center text-sm text-white">
-						Already a member ?
-						<button
-							onClick={() => {
-								push("/home");
-							}}
-							className="mx-2 font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-						>
-							Log in
-						</button>
-					</p>
 				</form>
+				<p className="mt-10 text-center text-sm text-white">
+					Already a member ?
+					<button
+						onClick={() => {
+							push("/login");
+						}}
+						className="mx-2 font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+					>
+						Log in
+					</button>
+				</p>
 			</div>
 		</div>
 	);

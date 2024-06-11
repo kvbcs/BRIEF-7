@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export async function getAllCrypto() {
-	let url = `${process.env.NEXT_PUBLIC_API_URL}crypto/all`;
+export async function getAllPromo() {
+	let url = `${process.env.NEXT_PUBLIC_API_URL}promoCode/all`;
 
 	let axiosConfig = {
 		headers: {

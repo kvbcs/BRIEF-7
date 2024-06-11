@@ -1,9 +1,6 @@
+import { ErrorMsgProps } from "@/Utils/types";
 import React from "react";
 
-export const ErrorMsg = (errorName: { error: string }) => {
-	return (
-		<p className="text-red-500 text-lg italic">
-			The field {errorName.error} is required
-		</p>
-	);
+export const ErrorMsg = ({ content }: ErrorMsgProps) => {
+	return <p className="text-red-500 text-lg italic">{content}</p>;
 };

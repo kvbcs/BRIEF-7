@@ -11,6 +11,7 @@ export type RegisterProps = {
 	email: string;
 	password: string;
 	promoCode: string;
+	age: number;
 };
 
 export type AllCryptoProps = {
@@ -21,4 +22,12 @@ export type AllCryptoProps = {
 	quantity: number;
 	created_at?: string;
 	updated_at?: string;
+};
+
+export type AllPromoProps = {
+	name: string;
+	value: number;
+};
+export type ErrorMsgProps = {
+	content?: any;
 };

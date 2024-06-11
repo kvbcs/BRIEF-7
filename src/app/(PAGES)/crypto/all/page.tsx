@@ -22,7 +22,7 @@ const page = () => {
 			<button
 				className="bg-sky-500 p-3 rounded-full"
 				onClick={() => {
-					window.localStorage.removeItem("token");
+					window.sessionStorage.removeItem("token");
 					push("/");
 				}}
 			>

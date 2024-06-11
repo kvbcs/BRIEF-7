@@ -26,11 +26,11 @@ const LoginForm = () => {
 						res.data.access_token
 					);
 					toast.success("Login successful !");
-					push("/home");
+					push("/crypto/all");
 				}
 			});
 		} catch (e) {
-			toast.error("Login error !")
+			toast.error("Login error !");
 			console.log(e);
 		}
 	};

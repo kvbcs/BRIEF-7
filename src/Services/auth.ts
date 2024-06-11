@@ -6,7 +6,7 @@ export async function registerApi(registerProps: RegisterProps) {
 
 	let axiosConfig = {
 		headers: {
-			"content-type": "application/x-www-form-urlencoded;charset=utf-8",
+			"content-type": "application/json;charset=utf-8",
 			"Access-Control-Allow-Origin": "*",
 			"Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
 		},
@@ -22,6 +22,7 @@ export async function registerApi(registerProps: RegisterProps) {
 				email: registerProps.email,
 				password: registerProps.password,
 				promoCode: registerProps.promoCode,
+				age: 20,
 			},
 			axiosConfig
 		)
