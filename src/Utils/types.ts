@@ -25,9 +25,18 @@ export type AllCryptoProps = {
 };
 
 export type AllPromoProps = {
+	id?: string;
 	name: string;
 	value: number;
 };
+
+export type AllOfferProps = {
+	amount: number;
+	created_at?: string;
+	id_user?: string;
+	Crypto: AllCryptoProps;
+};
+
 export type ErrorMsgProps = {
 	content?: any;
 };
