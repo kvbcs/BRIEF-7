@@ -40,6 +40,7 @@ export type AllCryptoProps = {
 };
 
 export type CreateUpdateCryptoProps = {
+	id?: string;
 	name: string;
 	value: number;
 	quantity: number;
