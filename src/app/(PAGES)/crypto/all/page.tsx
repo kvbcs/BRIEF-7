@@ -5,7 +5,7 @@ import { AllCryptoProps } from "@/Utils/types";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const page = (crypto: AllCryptoProps) => {
 	const [cryptoList, setCryptoList] = useState<AllCryptoProps[]>();
 	const [isReloadNeeded, setIsReloadNeeded] = useState(false);
 	const { push } = useRouter();
@@ -19,23 +19,21 @@ const page = () => {
 
 	return (
 		<div>
-			<button
-				className="bg-sky-500 p-3 rounded-full"
-				onClick={() => {
-					window.sessionStorage.removeItem("token");
-					push("/");
-				}}
-			>
-				Disconnect
-			</button>
-			{cryptoList &&
-				cryptoList.map((crypto) => {
-					return (
-						<div key={crypto.id}>
-							<CryptoCards crypto={crypto} />
-						</div>
-					);
-				})}
+			<div className="flex flex-row flex-wrap gap-[50px] px-9 items-center justify-center">
+				{cryptoList &&
+					cryptoList.map((crypto) => {
+						return (
+							<div key={crypto.id}>
+								<CryptoCards
+									name={crypto.name}
+									image={crypto.image}
+									value={crypto.value}
+									quantity={crypto.quantity}
+								/>
+							</div>
+						);
+					})}
+			</div>
 		</div>
 	);
 };

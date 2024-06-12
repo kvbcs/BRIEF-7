@@ -22,7 +22,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Toaster />
 				<Header />
-				<main className=" min-h-[90vh] max-h-fit flex flex-col justify-center bg-slate-900">
+				<main className=" min-h-[90vh] max-h-fit flex flex-col justify-center bg-slate-900 py-[100px]">
 					{children}
 				</main>
 				<Footer />
