@@ -2,8 +2,8 @@ import { AllTradeProps } from "@/Utils/types";
 import axios from "axios";
 
 // All Trades --------------------------------------------------------------------------------------------------------------------
-export async function getAllTrade() {
-	let url = `${process.env.NEXT_PUBLIC_API_URL}trade/all`;
+export async function getMyAssets() {
+	let url = `${process.env.NEXT_PUBLIC_API_URL}user/my-assets`;
 
 	let axiosConfig = {
 		headers: {
@@ -25,7 +25,7 @@ export async function getAllTrade() {
 			return res;
 		})
 		.catch((e) => {
-			console.log("Error getting all trades", e);
+			console.log("Error getting my assets", e);
 			throw new Error(e);
 		});
 }
