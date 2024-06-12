@@ -84,8 +84,16 @@ export type CreateUpdateOfferProps = {
 	amount: number;
 };
 
-//Misc Types ----------------------------------------------------------------------------------------------------------------
+//User Types ----------------------------------------------------------------------------------------------------------------
+export type assetsProps = {
+	firstName: string;
+	lastName: string;
+	dollarAvailables: number;
+	pseudo: string;
+	UserHasCrypto: AllCryptoProps;
+};
 
+//Misc Types ----------------------------------------------------------------------------------------------------------------
 export type ErrorMsgProps = {
 	content?: any;
 };
