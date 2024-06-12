@@ -1,7 +1,7 @@
-import { LoginProps, RegisterProps } from "@/Utils/types";
+import { AuthProps } from "@/Utils/types";
 import axios from "axios";
 
-export async function registerApi(registerProps: RegisterProps) {
+export async function registerApi(registerProps: AuthProps) {
 	let url = `${process.env.NEXT_PUBLIC_API_URL}auth/signup`;
 
 	let axiosConfig = {
@@ -34,7 +34,7 @@ export async function registerApi(registerProps: RegisterProps) {
 		});
 }
 
-export async function loginApi(loginProps: LoginProps) {
+export async function loginApi(loginProps: AuthProps) {
 	let url = `${process.env.NEXT_PUBLIC_API_URL}auth/signin`;
 
 	let axiosConfig = {
