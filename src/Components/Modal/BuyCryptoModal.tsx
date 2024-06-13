@@ -69,7 +69,7 @@ export const BuyCryptoModal = ({
 							onClick={handleClose}
 							className="bg-red-400 text-white rounded-md text-center w-32 p-2 m-4 "
 						>
-							Annuler
+							Cancel
 						</button>
 						<button
 							className="bg-green-700 text-white rounded-md text-center w-32 p-2 m-4 "
@@ -77,7 +77,7 @@ export const BuyCryptoModal = ({
 								HandleCryptoBuy();
 							}}
 						>
-							Acheter
+							Confirm
 						</button>
 					</div>
 				</Box>

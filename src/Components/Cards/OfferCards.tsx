@@ -23,11 +23,11 @@ const OfferCards = ({
 				}
 			})
 			.catch((e) => {
-				console.log(e), toast.error("Coin not for sale");
+				console.log(e), toast.error("Coin not available anymore");
 			});
 	}
 	return (
-		<div className="flex flex-col justify-evenly items-center my-36 gap-[100px] border-2 h-fit">
+		<div className="flex flex-col justify-evenly items-center my-36 gap-[100px] h-fit">
 			<div className="bg-sky-900 h-fit w-fit px-14 flex flex-col items-center justify-evenly rounded-md">
 				<p>Number of tokens : {offer.amount}</p>
 				<p>Seller : {offer.User.pseudo}</p>

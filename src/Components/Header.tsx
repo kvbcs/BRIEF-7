@@ -20,9 +20,34 @@ const Header = () => {
 				>
 					Crypto
 				</button>
-				<button>Trade</button>
-				<button>Offer</button>
-				<button>My Assets</button>
+				<button
+					onClick={() => {
+						push("/trade/all");
+					}}
+				>
+					Trade
+				</button>
+				<button
+					onClick={() => {
+						push("/offer/all");
+					}}
+				>
+					Offer
+				</button>
+				<button
+					onClick={() => {
+						push("/user/my-assets");
+					}}
+				>
+					My Assets
+				</button>
+				<button
+					onClick={() => {
+						push("/user/users-assets");
+					}}
+				>
+					All Users
+				</button>
 			</ul>
 			<button
 				onClick={() => {
