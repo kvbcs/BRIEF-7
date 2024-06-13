@@ -1,7 +1,14 @@
 import { AllCryptoProps } from "@/Utils/types";
 import React from "react";
+import { BuyCryptoModal } from "../Modal/BuyCryptoModal";
 
-const CryptoCards = (crypto: AllCryptoProps) => {
+const CryptoCards = ({
+	crypto,
+	isBuyVisible,
+}: {
+	crypto: AllCryptoProps;
+	isBuyVisible: boolean;
+}) => {
 	return (
 		<div className="relative flex w-96 flex-col rounded-xl bg-black text-white bg-clip-border shadow-md">
 			<div className="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl bg-white bg-clip-border text-white">
@@ -24,12 +31,7 @@ const CryptoCards = (crypto: AllCryptoProps) => {
 				</p>
 			</div>
 			<div className="p-6 pt-0">
-				<button
-					className="block w-full select-none rounded-lg bg-green-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900 transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-					type="button"
-				>
-					Buy
-				</button>
+				<BuyCryptoModal crypto={crypto} isBuyVisible={isBuyVisible} />
 			</div>
 		</div>
 	);

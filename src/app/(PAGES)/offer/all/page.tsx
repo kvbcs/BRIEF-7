@@ -12,28 +12,28 @@ const page = () => {
 	const { push } = useRouter();
 
 	useEffect(() => {
-		getAllOffer().then((res) => {
-			setOfferList(res.data);
-			console.log(res.data);
-		});
+		getAllOffer()
+			.then((res) => {
+				setOfferList(res.data);
+				setIsReloadNeeded(false);
+				console.log(res.data);
+			})
+			.catch((e) => {
+				setIsReloadNeeded(false);
+				console.log(e);
+			});
 	}, [isReloadNeeded]);
 
 	return (
 		<div>
-			<button
-				className="bg-sky-500 p-3 rounded-full"
-				onClick={() => {
-					window.sessionStorage.removeItem("token");
-					push("/");
-				}}
-			>
-				Disconnect
-			</button>
 			{offerList &&
 				offerList.map((offer) => {
 					return (
 						<div key={offer.id_user}>
-							<OfferCards offer={offer} />
+							<OfferCards
+								offer={offer}
+								setIsReloadNeeded={setIsReloadNeeded}
+							/>
 						</div>
 					);
 				})}

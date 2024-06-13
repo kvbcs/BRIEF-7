@@ -117,12 +117,12 @@ export async function postCreateCrypto(
 }
 
 // Buy Crypto --------------------------------------------------------------------------------------------------------------------
-export async function postBuyCrypto(buyCryptoProps: BuyCryptoProps) {
+export async function postBuyCrypto(id_crypto: string, amount: number) {
 	let url = `${process.env.NEXT_PUBLIC_API_URL}crypto/buy`;
 
 	let axiosConfig = {
 		headers: {
-			"content-type": "application/x-www-form-urlencoded;charset=utf-8",
+			"content-type": "application/json;charset=utf-8",
 			"Access-Control-Allow-Origin": "*",
 			"Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
 			Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -132,8 +132,8 @@ export async function postBuyCrypto(buyCryptoProps: BuyCryptoProps) {
 		.post(
 			url,
 			{
-				id_crypto: buyCryptoProps.id_crypto,
-				amount: buyCryptoProps.amount,
+				id_crypto: id_crypto,
+				amount: amount,
 			},
 			axiosConfig
 		)

@@ -11,24 +11,26 @@ const page = (crypto: AllCryptoProps) => {
 	const { push } = useRouter();
 
 	useEffect(() => {
-		getAllCrypto().then((res) => {
-			setCryptoList(res.data);
-			console.log(res.data);
-		});
+		getAllCrypto()
+			.then((res) => {
+				setCryptoList(res.data);
+				console.log(res.data);
+			})
+			.catch((e) => {
+				console.log(e);
+			});
 	}, [isReloadNeeded]);
 
 	return (
 		<div>
 			<div className="flex flex-row flex-wrap gap-[50px] px-9 items-center justify-center">
 				{cryptoList &&
-					cryptoList.map((crypto) => {
+					cryptoList?.map((crypto) => {
 						return (
 							<div key={crypto.id}>
 								<CryptoCards
-									name={crypto.name}
-									image={crypto.image}
-									value={crypto.value}
-									quantity={crypto.quantity}
+									crypto={crypto}
+									isBuyVisible={true}
 								/>
 							</div>
 						);

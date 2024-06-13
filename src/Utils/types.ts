@@ -73,6 +73,10 @@ export type CreateTradeProps = {
 
 //Offer Types ----------------------------------------------------------------------------------------------------------------
 export type AllOfferProps = {
+	id: string;
+	User: {
+		pseudo: string;
+	};
 	amount: number;
 	created_at?: string;
 	id_user?: string;
