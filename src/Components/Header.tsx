@@ -8,11 +8,11 @@ const Header = () => {
 
 	return (
 		<header className="bg-black w-full h-[10vh] flex flex-row items-center justify-between px-5">
-			<div className="h-[90%] w-[100px] border-2">
+			<div className="h-[90%] w-[100px]">
 				<img
-					src="/public/Logo.png"
+					src="https://m.media-amazon.com/images/I/71cu980UfuL._AC_UF894,1000_QL80_.jpg"
 					alt="logo"
-					className="h-full w-full"
+					className="h-full w-full rounded-full"
 				/>
 			</div>
 			<ul className="flex flex-row gap-[50px]">
