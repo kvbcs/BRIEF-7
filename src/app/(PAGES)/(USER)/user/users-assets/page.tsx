@@ -33,7 +33,7 @@ const page = (assets: assetsProps) => {
 				{assetsList &&
 					assetsList?.map((assets) => {
 						return (
-							<div key={assets.UserHasCrypto.id}>
+							<div>
 								<MyAssetsCards assets={assets} />
 							</div>
 						);

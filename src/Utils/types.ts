@@ -31,7 +31,7 @@ export type CreateUpdatePromoProps = {
 //Crypto Types ----------------------------------------------------------------------------------------------------------------
 export type AllCryptoProps = {
 	id?: string;
-	name: string;
+	name?: string;
 	value?: string;
 	image?: string;
 	quantity?: number;

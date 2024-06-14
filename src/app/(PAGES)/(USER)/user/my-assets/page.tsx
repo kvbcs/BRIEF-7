@@ -24,7 +24,7 @@ const page = (assets: assetsProps) => {
 
 	return (
 		<div>
-			<Header/>
+			<Header />
 			<div className="flex flex-row flex-wrap gap-[50px] px-9 items-center justify-center">
 				{assetsList &&
 					assetsList?.map((assets) => {
