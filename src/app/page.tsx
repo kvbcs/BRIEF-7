@@ -5,9 +5,7 @@ const page = () => {
 	return (
 		<div>
 			<HomeHeader />
-			<img
-				className="h-[90vh] w-full"
-				src="wp.png" alt="" />
+			<img className="h-[90vh] w-full" src="wp2.jpeg" alt="" />
 		</div>
 	);
 };

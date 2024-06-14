@@ -3,6 +3,7 @@ import { AllCryptoProps } from "@/Utils/types";
 import { Box, Modal } from "@mui/material";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { CreateCryptoForm } from "../Forms/CreateCryptoForm";
 
 export const CreateCryptoModal = ({ crypto }: { crypto: AllCryptoProps }) => {
 	const style = {

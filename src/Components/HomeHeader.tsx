@@ -7,7 +7,7 @@ const HomeHeader = () => {
 	return (
 		<header className="bg-black w-full h-[10vh] flex flex-row items-center justify-between px-5">
 			<div className="h-[90%] w-[100px]">
-				<img src="Logo.png" alt="" className="h-full w-full" />
+				<img src="Logo.png" alt="logo" className="h-full w-full" />
             </div>
             <div className="flex flex-row gap-[50px] h-[90%] items-center">
 			<LoginButton />

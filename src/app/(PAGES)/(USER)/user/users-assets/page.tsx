@@ -1,5 +1,6 @@
 "use client";
 import MyAssetsCards from "@/Components/Cards/MyAssetsCards";
+import Header from "@/Components/Header";
 import { getAllAssets, getMyAssets } from "@/Services/user";
 import { assetsProps } from "@/Utils/types";
 import { useRouter } from "next/navigation";
@@ -26,6 +27,7 @@ const page = (assets: assetsProps) => {
 
 	return (
 		<div>
+			<Header />
 			<h2 className="text-center">All users</h2>
 			<div className="flex flex-row flex-wrap gap-[50px] my-14 px-9 items-center justify-center">
 				{assetsList &&

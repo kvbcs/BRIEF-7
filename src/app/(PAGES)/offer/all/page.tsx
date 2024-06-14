@@ -1,6 +1,7 @@
 "use client";
 
 import OfferCards from "@/Components/Cards/OfferCards";
+import Header from "@/Components/Header";
 import { getAllOffer } from "@/Services/offer";
 import { AllOfferProps } from "@/Utils/types";
 import { useRouter } from "next/navigation";
@@ -26,6 +27,7 @@ const page = () => {
 
 	return (
 		<div>
+			<Header/>
 			{offerList &&
 				offerList.map((offer) => {
 					return (

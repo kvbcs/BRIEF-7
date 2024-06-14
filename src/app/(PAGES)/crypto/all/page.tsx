@@ -1,5 +1,6 @@
 "use client";
 import CryptoCards from "@/Components/Cards/CryptoCards";
+import Header from "@/Components/Header";
 import { CreateCryptoModal } from "@/Components/Modal/CreateCryptoModal";
 import { getAllCrypto, postCreateCrypto } from "@/Services/crypto";
 import { AllCryptoProps } from "@/Utils/types";
@@ -25,7 +26,10 @@ const page = (crypto: AllCryptoProps) => {
 
 	return (
 		<div>
-			<CreateCryptoModal crypto={crypto} />
+			<Header />
+			<div className="my-12 flex flex-row justify-center">
+				<CreateCryptoModal crypto={crypto} />
+				</div>
 			<div className="flex flex-row flex-wrap gap-[50px] px-9 items-center justify-center">
 				{cryptoList &&
 					cryptoList?.map((crypto) => {

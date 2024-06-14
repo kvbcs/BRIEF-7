@@ -10,7 +10,7 @@ const DisconnectButton = () => {
 				window.sessionStorage.removeItem("token");
 				push("/");
 			}}
-			className="bg-red-500 p-3 rounded-lg w-[200px]"
+			className="bg-red-500 p-3 rounded-lg w-[150px]"
 		>
 			Disconnect
 		</button>

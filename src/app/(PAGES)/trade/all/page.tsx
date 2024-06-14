@@ -1,6 +1,7 @@
 "use client";
 import CryptoCards from "@/Components/Cards/CryptoCards";
 import TradeCards from "@/Components/Cards/TradeCards";
+import Header from "@/Components/Header";
 import { getAllCrypto } from "@/Services/crypto";
 import { getAllTrade } from "@/Services/trade";
 import { AllTradeProps } from "@/Utils/types";
@@ -21,6 +22,7 @@ const page = (trade: AllTradeProps) => {
 
 	return (
 		<div>
+			<Header />
 			<div className="flex flex-row flex-wrap gap-[50px] px-9 items-center justify-center">
 				{tradeList &&
 					tradeList.map((trade) => {
