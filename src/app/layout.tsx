@@ -21,8 +21,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<Toaster />
-				<Header />
-				<main className=" min-h-[90vh] max-h-fit flex flex-col justify-center bg-slate-900 py-[100px]">
+				<main className=" min-h-[100vh] max-h-fit flex flex-col bg-slate-900">
 					{children}
 				</main>
 				<Footer />

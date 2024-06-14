@@ -1,26 +1,15 @@
-"use client";
-import { useRouter } from "next/navigation";
+import HomeHeader from "@/Components/HomeHeader";
+import React from "react";
 
-export default function Home() {
-	const { push } = useRouter();
+const page = () => {
 	return (
-		<div className="p-12 flex justify-center">
-			<button
-				className="bg-sky-500 p-3 rounded-full"
-				onClick={() => {
-					push("/register");
-				}}
-			>
-				register
-			</button>
-			<button
-				className="bg-sky-500 p-3 rounded-full"
-				onClick={() => {
-					push("/login");
-				}}
-			>
-				login
-			</button>
+		<div>
+			<HomeHeader />
+			<img
+				className="h-[90vh] w-full"
+				src="wp.png" alt="" />
 		</div>
 	);
-}
+};
+
+export default page;

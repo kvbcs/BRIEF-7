@@ -2,16 +2,17 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const Header = () => {
+export type HeaderProps = {
+	children: React.ReactNode;
+};
+const Header = ({ children }: HeaderProps) => {
 	const { push } = useRouter();
 
 	return (
 		<header className="bg-black w-full h-[10vh] flex flex-row items-center justify-between px-5">
-			<img
-				src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bitcoin_logo.svg/2560px-Bitcoin_logo.svg.png"
-				alt=""
-				className="h-8"
-			/>
+			<div className="h-[90%] w-[100px]">
+				<img src="Logo.png" alt="" className="h-full w-full" />
+			</div>
 			<ul className="flex flex-row gap-[50px]">
 				<button
 					onClick={() => {
@@ -49,15 +50,7 @@ const Header = () => {
 					All Users
 				</button>
 			</ul>
-			<button
-				onClick={() => {
-					window.sessionStorage.removeItem("token");
-					push("/");
-				}}
-				className="bg-red-500 p-3 rounded-lg"
-			>
-				Disconnect
-			</button>
+			{children}
 		</header>
 	);
 };

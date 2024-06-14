@@ -97,7 +97,12 @@ export type assetsProps = {
 	UserHasCrypto: AllCryptoProps;
 };
 
-//Misc Types ----------------------------------------------------------------------------------------------------------------
+//Other Types ----------------------------------------------------------------------------------------------------------------
 export type ErrorMsgProps = {
 	content?: any;
+};
+
+export type ButtonProps = {
+	content: string;
+	additionnalCss?: string;
 };
