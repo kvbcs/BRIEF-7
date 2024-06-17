@@ -102,16 +102,18 @@ export async function postCreateCrypto(
 			url,
 			{
 				name: createCryptoProps.name,
-				value: createCryptoProps.value,
-				quantity: createCryptoProps.quantity,
+				value: 1,
+				quantity: 1,
 				image: createCryptoProps.image,
 			},
 			axiosConfig
 		)
 		.then((res) => {
+			console.log(res);
 			return res;
 		})
 		.catch((e) => {
+			console.log(e);
 			throw new Error(e);
 		});
 }
