@@ -1,18 +1,23 @@
 import { postBuyCrypto, postCreateCrypto } from "@/Services/crypto";
-import { AllCryptoProps, CreateUpdateCryptoProps } from "@/Utils/types";
+import {
+	AllCryptoProps,
+	CreateUpdateCryptoProps,
+	CreateUpdateOfferProps,
+} from "@/Utils/types";
 import { Box, Modal } from "@mui/material";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { CreateCryptoForm } from "../Forms/CreateCryptoForm";
+import { CreateOfferForm } from "../Forms/CreateOfferForm";
 
-export type ModalCreateProps = {
-	cryptoProps?: AllCryptoProps;
+export type ModalOfferProps = {
+	offerProps?: CreateUpdateOfferProps;
 	isLoading?: any;
 };
-export const CreateCryptoModal = ({
-	cryptoProps,
+export const CreateOfferModal = ({
+	offerProps,
 	isLoading,
-}: ModalCreateProps) => {
+}: ModalOfferProps) => {
 	const [open, setOpen] = useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
@@ -35,7 +40,7 @@ export const CreateCryptoModal = ({
 				onClick={handleOpen}
 				className="bg-[gold] text-center rounded-lg text-black w-20 p-1 text-sm mt-1"
 			>
-				Create crypto
+				Create offer
 			</button>
 
 			<Modal
@@ -50,8 +55,8 @@ export const CreateCryptoModal = ({
 							className="absolute right-10 top-10 cursor-pointer"
 							onClick={handleClose}
 						></span>
-						<CreateCryptoForm
-							cryptoProps={cryptoProps}
+						<CreateOfferForm
+							offerProps={offerProps}
 							isLoading={isLoading}
 							handleClose={handleClose}
 						/>

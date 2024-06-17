@@ -2,6 +2,7 @@
 
 import OfferCards from "@/Components/Cards/OfferCards";
 import Header from "@/Components/Header";
+import { CreateOfferModal } from "@/Components/Modal/CreateOfferModal";
 import { getAllOffer } from "@/Services/offer";
 import { AllOfferProps } from "@/Utils/types";
 import { useRouter } from "next/navigation";
@@ -27,7 +28,8 @@ const page = () => {
 
 	return (
 		<div>
-			<Header/>
+			<Header />
+			<CreateOfferModal />
 			{offerList &&
 				offerList.map((offer) => {
 					return (

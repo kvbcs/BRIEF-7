@@ -2,6 +2,7 @@
 import CryptoCards from "@/Components/Cards/CryptoCards";
 import Header from "@/Components/Header";
 import { CreateCryptoModal } from "@/Components/Modal/CreateCryptoModal";
+import Search from "@/Components/Search";
 import { getAllCrypto } from "@/Services/crypto";
 import { AllCryptoProps } from "@/Utils/types";
 import { useRouter } from "next/navigation";
@@ -9,7 +10,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { ThreeCircles } from "react-loader-spinner";
 
-const page = (crypto: AllCryptoProps) => {
+const page = ({ crypto }: { crypto: AllCryptoProps }) => {
 	const [cryptoList, setCryptoList] = useState<AllCryptoProps[]>();
 	const [isReloadNeeded, setIsReloadNeeded] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
@@ -48,7 +49,7 @@ const page = (crypto: AllCryptoProps) => {
 				</div>
 			)}
 			<div className="my-12 flex flex-row justify-center">
-				<CreateCryptoModal crypto={crypto} />
+				<CreateCryptoModal />
 			</div>
 			<div className="flex flex-row flex-wrap gap-[50px] px-9 items-center justify-center">
 				{cryptoList &&
