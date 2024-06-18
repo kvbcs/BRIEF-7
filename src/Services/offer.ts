@@ -43,11 +43,7 @@ export async function buyOffer(id_offer: string) {
 		});
 }
 
-export async function createOffer({
-	props,
-}: {
-	props: CreateUpdateOfferProps;
-}) {
+export async function createOffer(data: CreateUpdateOfferProps) {
 	let url = `${process.env.NEXT_PUBLIC_API_URL}offer/create`;
 
 	let axiosConfig = {
@@ -62,8 +58,8 @@ export async function createOffer({
 		.post(
 			url,
 			{
-				id_crypto: String(props.id_crypto),
-				amount: 1,
+				id_crypto: String(data.id_crypto),
+				amount: Number(data.amount),
 			},
 			axiosConfig
 		)

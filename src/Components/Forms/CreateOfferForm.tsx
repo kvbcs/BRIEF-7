@@ -1,6 +1,6 @@
 "use client";
 
-import { AllOfferProps, CreateUpdateOfferProps } from "@/Utils/types";
+import { AllCryptoProps, CreateUpdateOfferProps } from "@/Utils/types";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ErrorMsg } from "../Error";
@@ -8,13 +8,13 @@ import toast from "react-hot-toast";
 import { createOffer } from "@/Services/offer";
 
 export type InsertOfferProps = {
-	offerProps?: CreateUpdateOfferProps;
-	isLoading: any;
+	id: string;
+
 	handleClose: any;
 };
 export const CreateOfferForm = ({
-	offerProps,
-	isLoading,
+	id,
+
 	handleClose,
 }: InsertOfferProps) => {
 	const [IsReloadNeeded, setIsReloadNeeded] = useState(false);
@@ -26,7 +26,9 @@ export const CreateOfferForm = ({
 		formState: { errors },
 	} = useForm<CreateUpdateOfferProps>();
 
-	const onSubmit: SubmitHandler<CreateUpdateOfferProps> = (data: any) =>
+	const onSubmit: SubmitHandler<CreateUpdateOfferProps> = (
+		data: CreateUpdateOfferProps
+	) =>
 		createOffer(data)
 			.then((res) => {
 				console.log(res);
@@ -58,6 +60,7 @@ export const CreateOfferForm = ({
 						</label>
 						<div className="mt-2">
 							<input
+								value={id}
 								type="text"
 								className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 indent-3"
 								{...register("id_crypto", { required: true })}

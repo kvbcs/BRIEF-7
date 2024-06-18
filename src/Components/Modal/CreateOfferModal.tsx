@@ -1,26 +1,28 @@
-import { postBuyCrypto, postCreateCrypto } from "@/Services/crypto";
-import {
-	AllCryptoProps,
-	CreateUpdateCryptoProps,
-	CreateUpdateOfferProps,
-} from "@/Utils/types";
+import { AllCryptoProps, CreateUpdateOfferProps } from "@/Utils/types";
 import { Box, Modal } from "@mui/material";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { CreateCryptoForm } from "../Forms/CreateCryptoForm";
 import { CreateOfferForm } from "../Forms/CreateOfferForm";
+import { createOffer } from "@/Services/offer";
 
 export type ModalOfferProps = {
-	offerProps?: CreateUpdateOfferProps;
+	id: string;
 	isLoading?: any;
 };
-export const CreateOfferModal = ({
-	offerProps,
-	isLoading,
-}: ModalOfferProps) => {
+export const CreateOfferModal = ({ id }: { id: string }) => {
 	const [open, setOpen] = useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
+
+	// function HandleOffer() {
+	// 	createOffer(data)
+	// 		.then((res) => {
+	// 			console.log(res);
+	// 			toast.success("Offer successful");
+	// 			handleClose();
+	// 		})
+	// 		.catch((e) => toast.error(e));
+	// }
 
 	const style = {
 		position: "absolute" as "absolute",
@@ -56,8 +58,8 @@ export const CreateOfferModal = ({
 							onClick={handleClose}
 						></span>
 						<CreateOfferForm
-							offerProps={offerProps}
-							isLoading={isLoading}
+							id={id}
+							
 							handleClose={handleClose}
 						/>
 					</div>

@@ -30,13 +30,13 @@ export type CreateUpdatePromoProps = {
 
 //Crypto Types ----------------------------------------------------------------------------------------------------------------
 export type AllCryptoProps = {
-	id?: string;
-	name?: string;
-	value?: string;
-	image?: string;
-	quantity?: number;
-	created_at?: string;
-	updated_at?: string;
+	id: string;
+	name: string;
+	value: string;
+	image: string;
+	quantity: number;
+	created_at: string;
+	updated_at: string;
 };
 
 export type CreateUpdateCryptoProps = {
@@ -94,7 +94,7 @@ export type assetsProps = {
 	lastName: string;
 	dollarAvailables: number;
 	pseudo: string;
-	UserHasCrypto: AllCryptoProps;
+	UserHasCrypto: AllCryptoProps[];
 };
 
 //Other Types ----------------------------------------------------------------------------------------------------------------
