@@ -27,22 +27,25 @@ const OfferCards = ({
 			});
 	}
 	return (
-		<div className="flex flex-col justify-evenly items-center my-36 gap-[100px] h-fit">
-			<div className="bg-sky-900 h-fit w-fit px-14 flex flex-col items-center justify-evenly rounded-md">
-				<p>Number of tokens : {offer.amount}</p>
-				<p>Seller : {offer.User.pseudo}</p>
-
-				<CryptoCards crypto={offer.Crypto} isBuyVisible={false} />
-				<div className="w-full flex justify-end">
-					<button
-						className="bg-white text-center rounded-lg text-indigo-600 w-20 p-1 text-sm mt-1"
-						onClick={() => {
-							handleCryptoBuyViaOffer(offer.id);
-						}}
-					>
-						Buy
-					</button>
+		<div className="flex flex-col items-center my-16 h-fit w-full">
+			<div className="bg-[#caad4f] h-fit w-fit p-4 flex flex-col  gap-[20px] items-center justify-start rounded-lg text-black">
+				<div className="flex flex-row w-full">
+					<div className="flex flex-col w-full">
+						<p>Number of tokens : {offer.amount}</p>
+						<p>Seller : {offer.User.pseudo}</p>
+					</div>
+					<div className="w-full flex justify-end">
+						<button
+							className="bg-black text-center rounded-lg text-white w-20 p-2 text-éxl mt-1"
+							onClick={() => {
+								handleCryptoBuyViaOffer(offer.id);
+							}}
+						>
+							Buy
+						</button>
+					</div>
 				</div>
+				<CryptoCards crypto={offer.Crypto} isBuyVisible={false} />
 			</div>
 		</div>
 	);

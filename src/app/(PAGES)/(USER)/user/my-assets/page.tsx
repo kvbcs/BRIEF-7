@@ -5,6 +5,7 @@ import { getMyAssets } from "@/Services/user";
 import { assetsProps } from "@/Utils/types";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { CirclesWithBar } from "react-loader-spinner";
 
 const page = (assets: assetsProps) => {
 	const [assetsList, setAssetsList] = useState<assetsProps>();
@@ -27,13 +28,32 @@ const page = (assets: assetsProps) => {
 	}, [isReloadNeeded]);
 
 	if (!isReloadNeeded) {
-		return <h1> chargement</h1>;
+		return (
+			<div className="h-screen w-full gap-[100px] flex flex-col justify-center items-center">
+				<h1 className="text-3xl">LOADING...</h1>
+				<CirclesWithBar
+					height="400"
+					width="400"
+					color="#4fa94d"
+					outerCircleColor="gold"
+					innerCircleColor="gold"
+					barColor="gold"
+					ariaLabel="circles-with-bar-loading"
+					wrapperStyle={{}}
+					wrapperClass=""
+					visible={true}
+				/>
+			</div>
+		);
 	}
 
 	return (
 		<div>
 			<Header />
-			<div className="flex flex-row flex-wrap gap-[50px] px-9 items-center justify-center">
+			<div className="w-full flex flex-row justify-center text-3xl items-center my-24">
+				<h1>My Assets</h1>
+			</div>
+			<div className="flex flex-row flex-wrap gap-[50px] justify-center px-9">
 				<MyAssetsCards assetsList={assetsList} />
 			</div>
 		</div>

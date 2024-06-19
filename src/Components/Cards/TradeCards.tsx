@@ -3,8 +3,8 @@ import React from "react";
 
 const TradeCards = (trade: AllTradeProps) => {
 	return (
-		<div className="h-[500px] w-[500px] my-8 flex flex-col gap-[20px] justify-between bg-black rounded-lg p-4">
-			<div className="h-2/3 w-full bg-black">
+		<div className="h-[550px] w-[500px] my-8 flex flex-col gap-[20px] justify-between bg-black rounded-lg p-4">
+			<div className="h-fit w-full bg-black">
 				<img
 					src={trade.Crypto.image}
 					alt=""

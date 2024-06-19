@@ -8,7 +8,7 @@ import { AllCryptoProps } from "@/Utils/types";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { ThreeCircles } from "react-loader-spinner";
+import { CirclesWithBar, ThreeCircles } from "react-loader-spinner";
 
 const page = ({ crypto }: { crypto: AllCryptoProps }) => {
 	const [cryptoList, setCryptoList] = useState<AllCryptoProps[]>();
@@ -22,32 +22,38 @@ const page = ({ crypto }: { crypto: AllCryptoProps }) => {
 			.then((res) => {
 				setCryptoList(res.data);
 				toast.success("Loading completed");
-				setIsLoading(false);
+				setIsLoading(true);
 			})
 			.catch((e) => {
-				toast.error("Loading failed");
+				toast.error("Server error");
 				console.log(e);
 				setIsLoading(false);
 			});
 	}, []);
 
+	if (!isLoading) {
+		return (
+			<div className="h-screen w-full gap-[100px] flex flex-col justify-center items-center">
+				<h1 className="text-3xl">LOADING...</h1>
+				<CirclesWithBar
+					height="400"
+					width="400"
+					color="#4fa94d"
+					outerCircleColor="gold"
+					innerCircleColor="gold"
+					barColor="gold"
+					ariaLabel="circles-with-bar-loading"
+					wrapperStyle={{}}
+					wrapperClass=""
+					visible={true}
+				/>
+			</div>
+		);
+	}
+
 	return (
 		<div>
 			<Header />
-			{isLoading && (
-				<div className="w-full flex flex-col items-center my-[100px] justify-center gap-[50px] h-fit">
-					<h2 className="text-center text-3xl">LOADING...</h2>
-					<ThreeCircles
-						visible={true}
-						height="400"
-						width="500"
-						color="#C0AA61"
-						ariaLabel="three-circles-loading"
-						wrapperStyle={{}}
-						wrapperClass=""
-					/>
-				</div>
-			)}
 
 			<div className="flex flex-col justify-center items-center gap-[50px] my-[50px] text-3xl">
 				<h1>All Crypto</h1>
