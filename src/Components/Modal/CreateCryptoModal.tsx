@@ -1,9 +1,8 @@
-import { postBuyCrypto, postCreateCrypto } from "@/Services/crypto";
-import { AllCryptoProps, CreateUpdateCryptoProps } from "@/Utils/types";
+import { AllCryptoProps } from "@/Utils/types";
 import { Box, Modal } from "@mui/material";
 import React, { useState } from "react";
-import toast from "react-hot-toast";
 import { CreateCryptoForm } from "../Forms/CreateCryptoForm";
+import { IoMdAddCircle } from "react-icons/io";
 
 export type ModalCreateProps = {
 	cryptoProps?: AllCryptoProps;
@@ -33,8 +32,9 @@ export const CreateCryptoModal = ({
 		<div>
 			<button
 				onClick={handleOpen}
-				className="bg-[gold] text-center rounded-lg text-black w-fit p-4 text-2xl hover:bg-[#CAAD4F] mt-1"
+				className="bg-[gold] text-center rounded-lg text-black w-fit flex flex-row justify-center gap-3 items-center p-4 text-2xl hover:bg-[#CAAD4F] mt-1"
 			>
+				<IoMdAddCircle />
 				Create crypto
 			</button>
 

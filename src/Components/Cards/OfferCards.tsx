@@ -3,6 +3,7 @@ import React from "react";
 import CryptoCards from "./CryptoCards";
 import toast from "react-hot-toast";
 import { buyOffer } from "@/Services/offer";
+import { FaShoppingCart } from "react-icons/fa";
 
 const OfferCards = ({
 	offer,
@@ -36,11 +37,12 @@ const OfferCards = ({
 					</div>
 					<div className="w-full flex justify-end">
 						<button
-							className="bg-black text-center rounded-lg text-white w-20 p-2 text-éxl mt-1"
+							className="bg-black text-center flex flex-row justify-center items-center gap-3 rounded-lg text-white w-20 p-2 text-éxl mt-1"
 							onClick={() => {
 								handleCryptoBuyViaOffer(offer.id);
 							}}
 						>
+							<FaShoppingCart />
 							Buy
 						</button>
 					</div>

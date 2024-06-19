@@ -3,6 +3,7 @@ import { AllCryptoProps } from "@/Utils/types";
 import { Box, Modal } from "@mui/material";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { FaShoppingCart } from "react-icons/fa";
 
 export const BuyCryptoModal = ({
 	crypto,
@@ -41,9 +42,10 @@ export const BuyCryptoModal = ({
 			{isBuyVisible && (
 				<button
 					onClick={handleOpen}
-					className="bg-white text-center rounded-lg text-indigo-600 w-20 p-1 text-sm mt-1"
+					className="text-center flex flex-row justify-center gap-3 items-center bg-[gold] rounded-lg text-black w-20 p-1 text-lg mt-1"
 				>
-					Buy{" "}
+					<FaShoppingCart />
+					Buy
 				</button>
 			)}
 			<Modal

@@ -1,9 +1,7 @@
-import { AllCryptoProps, CreateUpdateOfferProps } from "@/Utils/types";
 import { Box, Modal } from "@mui/material";
 import React, { useState } from "react";
-import toast from "react-hot-toast";
 import { CreateOfferForm } from "../Forms/CreateOfferForm";
-import { createOffer } from "@/Services/offer";
+import { MdLocalOffer } from "react-icons/md";
 
 export type ModalOfferProps = {
 	id: string;
@@ -13,16 +11,6 @@ export const CreateOfferModal = ({ id }: { id: string }) => {
 	const [open, setOpen] = useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
-
-	// function HandleOffer() {
-	// 	createOffer(data)
-	// 		.then((res) => {
-	// 			console.log(res);
-	// 			toast.success("Offer successful");
-	// 			handleClose();
-	// 		})
-	// 		.catch((e) => toast.error(e));
-	// }
 
 	const style = {
 		position: "absolute" as "absolute",
@@ -40,8 +28,9 @@ export const CreateOfferModal = ({ id }: { id: string }) => {
 		<div>
 			<button
 				onClick={handleOpen}
-				className="bg-[gold] text-center rounded-lg text-black w-20 p-1 text-sm mt-1"
+				className="bg-[gold] text-center rounded-lg flex flex-row justify-center items-center gap-3 w-fit text-black p-4 text-sm mt-1"
 			>
+				<MdLocalOffer />
 				Create offer
 			</button>
 
@@ -57,11 +46,7 @@ export const CreateOfferModal = ({ id }: { id: string }) => {
 							className="absolute right-10 top-10 cursor-pointer"
 							onClick={handleClose}
 						></span>
-						<CreateOfferForm
-							id={id}
-							
-							handleClose={handleClose}
-						/>
+						<CreateOfferForm id={id} handleClose={handleClose} />
 					</div>
 				</Box>
 			</Modal>

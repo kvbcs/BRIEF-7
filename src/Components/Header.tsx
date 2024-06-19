@@ -2,6 +2,9 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import DisconnectButton from "./Buttons/DisconnectButton";
+import { FaBitcoin, FaShoppingBasket, FaUser } from "react-icons/fa";
+import { GiTrade } from "react-icons/gi";
+import { MdLocalOffer } from "react-icons/md";
 
 const Header = () => {
 	const { push } = useRouter();
@@ -15,40 +18,50 @@ const Header = () => {
 					className="h-full w-full rounded-full"
 				/>
 			</div>
-			<ul className="flex flex-row gap-[50px]">
+			<ul className="flex flex-row gap-[75px]">
 				<button
+					className="flex flex-row gap-3 items-center justify-center"
 					onClick={() => {
 						push("/crypto/all");
 					}}
 				>
+					<FaBitcoin />
 					Crypto
 				</button>
 				<button
+					className="flex flex-row gap-3 items-center justify-center"
 					onClick={() => {
 						push("/trade/all");
 					}}
 				>
+					<GiTrade />
 					Trade
 				</button>
 				<button
+					className="flex flex-row gap-3 items-center justify-center"
 					onClick={() => {
 						push("/offer/all");
 					}}
 				>
+					<MdLocalOffer />
 					Offer
 				</button>
 				<button
+					className="flex flex-row gap-3 items-center justify-center"
 					onClick={() => {
 						push("/user/my-assets");
 					}}
 				>
+					<FaShoppingBasket />
 					My Assets
 				</button>
 				<button
+					className="flex flex-row gap-3 items-center justify-center"
 					onClick={() => {
 						push("/user/users-assets");
 					}}
 				>
+					<FaUser />
 					All Users
 				</button>
 			</ul>

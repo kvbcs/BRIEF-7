@@ -37,7 +37,7 @@ export const CreateOfferForm = ({
 				handleClose();
 			})
 			.catch((e) => {
-				toast.error("Error");
+				toast.error("Insufficient tokens");
 				console.log(e);
 			});
 
