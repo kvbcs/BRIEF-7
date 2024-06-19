@@ -10,6 +10,17 @@ export type AuthProps = {
 	age?: number;
 };
 
+export type RegisterProps = {
+	firstName?: string;
+	lastName?: string;
+	pseudo?: string;
+	city?: string;
+	email: string;
+	password: string;
+	promoCode?: string;
+	age?: number;
+};
+
 //Role Types ----------------------------------------------------------------------------------------------------------------
 export type AllRoleProps = {
 	id?: string;

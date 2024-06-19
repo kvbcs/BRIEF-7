@@ -60,7 +60,11 @@ const LoginForm = () => {
 								className="block indent-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								{...register("email", { required: true })}
 							/>
-							{errors.email && <ErrorMsg error={"Email"} />}
+							{errors.email && (
+								<ErrorMsg
+									content={"This email field is required"}
+								/>
+							)}
 						</div>
 					</div>
 
@@ -82,14 +86,18 @@ const LoginForm = () => {
 									required: true,
 								})}
 							/>
-							{errors.password && <ErrorMsg error={"Password"} />}
+							{errors.password && (
+								<ErrorMsg
+									content={"The password field is required"}
+								/>
+							)}
 						</div>
 					</div>
 
 					<div>
 						<input
 							type="submit"
-							className="my-8 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+							className="my-8 flex w-full justify-center rounded-md bg-[#caad4f] px-3 py-1.5 text-lg font-semibold leading-6 text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 							value="Submit"
 						/>
 					</div>
@@ -97,10 +105,11 @@ const LoginForm = () => {
 					<p className="mt-10 text-center text-sm text-white">
 						Don't have an account ?
 						<button
+							type="button"
 							onClick={() => {
 								push("/register");
 							}}
-							className="mx-2 font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+							className="mx-2 font-semibold leading-6 text-[#caad4f] hover:text-[#7a6e29]"
 						>
 							Register
 						</button>

@@ -114,7 +114,7 @@ const RegisterForm = () => {
 							htmlFor="pseudo"
 							className="block text-sm font-medium leading-6 text-white"
 						>
-							Username
+							Pseudo
 						</label>
 						<div className="mt-2">
 							<input
@@ -215,7 +215,7 @@ const RegisterForm = () => {
 					<div>
 						<input
 							type="submit"
-							className="my-8 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+							className="my-8 flex w-full justify-center rounded-md bg-[#caad4f] px-3 py-1.5 text-lg font-semibold leading-6 text-black shadow-sm hover:bg-[#7c6928] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 							value="Submit & Log in"
 						/>
 					</div>
@@ -223,10 +223,11 @@ const RegisterForm = () => {
 				<p className="mt-10 text-center text-sm text-white">
 					Already a member ?
 					<button
+						type="button"
 						onClick={() => {
 							push("/login");
 						}}
-						className="mx-2 font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+						className="mx-2 font-semibold leading-6 text-[#caad4f] hover:text-[#6e5e29]"
 					>
 						Log in
 					</button>

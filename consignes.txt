@@ -1,4 +1,0 @@
-User : acheter crypto (platforme ou autre user), listing et vendre crypto, 
-voir dernières trades, lister toutes les cryptos dispo, rechercher des cryptos
-
-Admin : créer nouvelles crypto et promo codes, voir assets des users et leur porte-monnaie 
