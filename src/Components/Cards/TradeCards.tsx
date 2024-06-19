@@ -3,18 +3,18 @@ import React from "react";
 
 const TradeCards = (trade: AllTradeProps) => {
 	return (
-		<div className="h-[600px] w-[700px] my-8 flex flex-col justify-between bg-black rounded-lg p-4">
+		<div className="h-[500px] w-[500px] my-8 flex flex-col gap-[20px] justify-between bg-black rounded-lg p-4">
 			<div className="h-2/3 w-full bg-black">
 				<img
 					src={trade.Crypto.image}
 					alt=""
-					className="h-64 w-full rounded-lg"
+					className="h-52 w-full rounded-lg"
 				/>
 				<p>Name : {trade.Crypto.name}</p>
 				<p>Quantity : {trade.Crypto.quantity}</p>
 				<p>Value : {trade.Crypto.value} $</p>
 			</div>
-			<div className="flex flex-row w-full h-1/3 border-2">
+			<div className="flex flex-row w-full border-2 h-fit">
 				<div className="bg-blue-800 w-1/2 p-4">
 					<h2 className="text-center">Giver</h2>
 					<p>First name : {trade.Giver.firstName}</p>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<footer className="relative py-20 flex flex-col items-center bg-cyan-900 overflow-hidden md:py-40">
+		<footer className="relative py-20 flex flex-col items-center bg-cyan-900 overflow-hidden md:py-40]">
 			<div className="relative z-[1] container m-auto px-6 md:px-12">
 				<div className="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
 					<div className="flex flex-wrap items-center justify-between md:flex-nowrap">
@@ -60,10 +60,6 @@ const Footer = () => {
 							</ul>
 						</div>
 						<div className="w-10/12 m-auto  mt-16 space-y-6 text-center sm:text-left sm:w-5/12 sm:mt-auto">
-							
-
-							
-
 							<span className="flex justify-between text-white">
 								<a href="#" className="font-semibold">
 									Terms of Use{" "}

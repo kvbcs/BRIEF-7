@@ -33,7 +33,7 @@ export const CreateCryptoModal = ({
 		<div>
 			<button
 				onClick={handleOpen}
-				className="bg-[gold] text-center rounded-lg text-black w-20 p-1 text-sm mt-1"
+				className="bg-[gold] text-center rounded-lg text-black w-fit p-4 text-2xl hover:bg-[#CAAD4F] mt-1"
 			>
 				Create crypto
 			</button>

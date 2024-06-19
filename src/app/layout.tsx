@@ -21,7 +21,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<Toaster />
-				<main className=" min-h-[100vh] max-h-fit flex flex-col bg-slate-900">
+				<main className=" min-h-[100vh] max-h-fit flex flex-col bg-slate-900 pb-[100px]">
 					{children}
 				</main>
 				<Footer />

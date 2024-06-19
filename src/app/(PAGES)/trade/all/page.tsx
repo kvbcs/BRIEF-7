@@ -23,6 +23,9 @@ const page = (trade: AllTradeProps) => {
 	return (
 		<div>
 			<Header />
+			<h1 className="my-10 h-28 flex items-center justify-center text-3xl">
+				All Trades
+			</h1>
 			<div className="flex flex-row flex-wrap gap-[50px] px-9 items-center justify-center">
 				{tradeList &&
 					tradeList.map((trade) => {

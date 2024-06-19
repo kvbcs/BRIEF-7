@@ -48,9 +48,12 @@ const page = ({ crypto }: { crypto: AllCryptoProps }) => {
 					/>
 				</div>
 			)}
-			<div className="my-12 flex flex-row justify-center">
+
+			<div className="flex flex-col justify-center items-center gap-[50px] my-[50px] text-3xl">
+				<h1>All Crypto</h1>
 				<CreateCryptoModal />
 			</div>
+
 			<div className="flex flex-row flex-wrap gap-[50px] px-9 items-center justify-center">
 				{cryptoList &&
 					cryptoList?.map((crypto) => {
