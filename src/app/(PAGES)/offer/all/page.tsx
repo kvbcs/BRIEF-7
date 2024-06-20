@@ -55,18 +55,19 @@ const page = () => {
 			<div className="flex flex-row justify-center items-center gap-[50px] my-[50px] text-3xl">
 				<h1>All Offers</h1>
 			</div>
-			<div className="flex flex-row flex-wrap items-center gap-[50px] w-full h-fit"></div>
-			{offerList &&
-				offerList.map((offer) => {
-					return (
-						<div key={offer.id_user}>
-							<OfferCards
-								offer={offer}
-								setIsReloadNeeded={setIsReloadNeeded}
-							/>
-						</div>
-					);
-				})}
+			<div className="flex flex-row flex-wrap justify-evenly items-center gap-[50px] w-full h-fit">
+				{offerList &&
+					offerList.map((offer) => {
+						return (
+							<div key={offer.id_user} className="flex flex-row">
+								<OfferCards
+									offer={offer}
+									setIsReloadNeeded={setIsReloadNeeded}
+								/>
+							</div>
+						);
+					})}
+			</div>
 		</div>
 	);
 };

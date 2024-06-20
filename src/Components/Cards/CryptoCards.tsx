@@ -23,7 +23,7 @@ const CryptoCards = ({
 						{crypto.name}
 					</p>
 					<p className="block font-sans text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
-						Value : {crypto.value} $
+						Value : <span className="text-[green]">{crypto.value} $</span>
 					</p>
 				</div>
 				<p className="block font-sans text-sm font-normal leading-normal text-white antialiased opacity-75">
